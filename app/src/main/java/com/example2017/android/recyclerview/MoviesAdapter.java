@@ -12,10 +12,12 @@ import java.util.zip.Inflater;
 /**
  * Created by M7moud on 25-Nov-17.
  */
+//MoviesAdapter is the Adapter_class
+//movieHolder is the holder_class
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.movieHolder> {
 
     List<MoviesModel> list;
-
+//cnstructr
 public MoviesAdapter(List<MoviesModel> list){
 this.list=list;
 }
@@ -31,8 +33,10 @@ this.list=list;
     }
 
     @Override
-    public void onBindViewHolder(movieHolder holder, int position) {
+    public void onBindViewHolder(movieHolder holder, int position)
+    {
 
+        //instace from moviemodel
         MoviesModel model=list.get(position);
         holder.img.setImageResource(model.image);
         holder.txt.setText(model.title);
@@ -40,15 +44,21 @@ this.list=list;
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
+        //to return all images
+        //if zero it won't appeat any thing
         return list.size();
     }
 
-    class movieHolder extends RecyclerView.ViewHolder{
+    //holder_class
+    class movieHolder extends RecyclerView.ViewHolder
+    {
        TextView txt;
-        ImageView img;
+       ImageView img;
 
-        public movieHolder(View itemView) {
+        public movieHolder(View itemView)
+        {
             super(itemView);
 
             txt=(TextView)itemView.findViewById(R.id.textView);
